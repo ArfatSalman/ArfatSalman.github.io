@@ -1,6 +1,9 @@
 # build site
 _site
 
+# MacOS
+.DS_Store
+
 # Logs
 logs
 *.log

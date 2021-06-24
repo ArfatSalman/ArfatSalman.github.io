@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": false,
+  "emmet.includeLanguages": {
+    "njk": "html",
+    "nunjucks": "html"
+  }
+}
