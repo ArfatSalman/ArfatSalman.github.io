@@ -24,10 +24,19 @@ footer {
   min-height: auto;
 }
 
+.under-construction-img {
+  width: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
 header > nav > ul {
   position: relative;
   display: flex;
   margin-bottom: 40px;
+  margin-top: 8px;
   justify-content: center;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
@@ -77,7 +86,7 @@ main {
 
 .links {
   display: flex;
-  margin-top: 40px;
+  margin: 40px 0;
   justify-content: space-between;
 }
 
