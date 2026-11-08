@@ -1,1 +1,497 @@
-<!doctype html><html lang="en"><head><link rel="preconnect" href="https://fonts.gstatic.com"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer"><link rel="stylesheet" href="/style.css"><link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet"><title>Personal Homepage of Arfat Salman</title></head><body><img class="under-construction-img" src="assets/under-construction.png" alt="Under construction icon"><header><nav><ul><li><a href="/">Home</a></li><li><a href="/contact">Contact</a></li><li><a href="/projects">Projects</a></li></ul></nav></header><main><img width="200" class="profile-picture" src="assets/profile.jpeg"><div class="name">Arfat Salman</div><article class="intro">A passionate full stack web developer and an instructor.</article><article class="intro">I have 4 years of experience in building user interfaces using React and JavaScript.</article><div class="links"><div><img src="/assets/github.png" alt="Icon of GitHub, Inc."> <a href="https://github.com/ArfatSalman/">GitHub</a></div><div><img src="/assets/medium.png" alt="Icon of Medium"> <a href="https://medium.com/@arfatsalman">Medium</a></div><div><img src="/assets/twitter.png" alt="Icon of Twitter"> <a href="https://twitter.com/salman_arfat">Twitter</a></div><div><img src="/assets/linkedin.png" alt="Icon of LinkedIn"> <a href="https://www.linkedin.com/in/arfatsalman/">LinkedIn</a></div></div></main><footer>Made with <a href="https://www.11ty.dev/">11ty</a></footer></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Arfat Salman · Full-stack software engineer in Oslo</title>
+    <meta name="description" content="Arfat Salman is a software engineer in Oslo who builds software end to end, from interfaces to scalable back-end systems, and teaches how it works underneath." />
+    <meta name="author" content="Arfat Salman" />
+    
+    <link rel="canonical" href="https://arfat.dev/" />
+    
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Arfat Salman" />
+    <meta property="og:title" content="Arfat Salman · Full-stack software engineer in Oslo" />
+    <meta property="og:description" content="Arfat Salman is a software engineer in Oslo who builds software end to end, from interfaces to scalable back-end systems, and teaches how it works underneath." />
+    <meta property="og:url" content="https://arfat.dev/" />
+    <meta property="og:image" content="https://arfat.dev/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Arfat Salman, software engineer in Oslo" />
+    <meta property="profile:first_name" content="Arfat" />
+    <meta property="profile:last_name" content="Salman" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@salman_arfat" />
+
+    
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","url":"https://arfat.dev/","mainEntity":{"@type":"Person","@id":"https://arfat.dev/#person","name":"Arfat Salman","url":"https://arfat.dev/","image":"https://arfat.dev/assets/profile.jpeg","jobTitle":"Full-stack software engineer","description":"Arfat Salman is a software engineer in Oslo who builds software end to end, from interfaces to scalable back-end systems, and teaches how it works underneath.","address":{"@type":"PostalAddress","addressLocality":"Oslo","addressCountry":"NO"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Oslo"},"knowsAbout":["Software architecture","Scalable systems","Back-end development","Front-end development","JavaScript","React","Node.js","Python","Programming languages"],"sameAs":["https://github.com/ArfatSalman","https://medium.com/@arfatsalman","https://www.linkedin.com/in/arfatsalman/","https://twitter.com/salman_arfat"]}}</script>
+    
+
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/favicon_io/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicon_io/site.webmanifest" />
+
+    <script>
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+      } catch (e) {}
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <div class="page">
+      <header class="masthead">
+        <a class="brand" href="/" aria-label="Arfat Salman, home">arfat<span>.</span>dev</a>
+        <nav class="nav" aria-label="Sections">
+          <a href="/#stack">Stack</a>
+          <a href="/#work">Work</a>
+          <a href="/#syllabus">Syllabus</a>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+            <path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor" />
+          </svg>
+        </button>
+      </header>
+
+      <main id="main">
+        
+<section class="hero row" aria-labelledby="name">
+  <figure class="portrait">
+    <img src="/assets/profile.jpeg" width="450" height="450" fetchpriority="high" alt="Portrait of Arfat Salman in glasses and a checked shirt." />
+    <figcaption><span class="fig">Fig. 1</span> The author, probably about to explain closures.</figcaption>
+  </figure>
+
+  <div class="hero-body">
+    <p class="kicker">Software engineer · Oslo, Norway</p>
+    <h1 id="name">Arfat <em>Salman</em></h1>
+    <p class="lede">
+      I design and build software end to end, from the interface down to the systems
+      <span class="pen">underneath<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 6.5 C 18 3, 34 8.5, 52 5.5 S 84 3.5, 99 6" /></svg></span>,
+      and I like explaining how it all works.
+    </p>
+    <p>
+      Full-stack engineer and instructor<sup class="ref" aria-hidden="true"></sup>. Equally at home in a React
+      component, an API or an architecture diagram, and most interested in software that keeps working as it
+      grows. These days I’m in Oslo.
+    </p>
+    <p class="jump">
+      <a href="#stack">Across the stack</a>
+      <a href="#work">Selected work</a>
+      <a href="#contact">Get in touch</a>
+    </p>
+  </div>
+
+  <aside class="note">
+    Hence the syllabus in § 03: everything I’ve written, arranged the way I’d teach it.
+  </aside>
+</section>
+
+<section class="section" id="stack" aria-labelledby="stack-title">
+  <header class="section-head row">
+    <p class="label">§ 01</p>
+    <h2 id="stack-title">Across the stack</h2>
+  </header>
+
+  <div class="row">
+    <div></div>
+    <figure class="layers-fig">
+      <ol class="layers">
+        
+        <li class="layer">
+          <h3 class="layer-name">
+            <span class="meta">Front end</span>
+            <span class="title">Interface</span>
+          </h3>
+          <div class="layer-body">
+            <p>Interfaces that stay fast, accessible and easy to change as they grow: thoughtful component design, state that is easy to reason about, and performance people can feel.</p>
+            <ul class="stack" aria-label="Tools">
+              <li>JavaScript</li><li>React</li><li>HTML &amp; CSS</li>
+            </ul>
+          </div>
+        </li>
+        
+        <li class="layer">
+          <h3 class="layer-name">
+            <span class="meta">Back end</span>
+            <span class="title">Services</span>
+          </h3>
+          <div class="layer-body">
+            <p>APIs and services that are dependable and pleasant to work on: clear data models, careful error handling, and code the next engineer can pick up without a tour.</p>
+            <ul class="stack" aria-label="Tools">
+              <li>Node.js</li><li>Python</li><li>APIs</li>
+            </ul>
+          </div>
+        </li>
+        
+        <li class="layer">
+          <h3 class="layer-name">
+            <span class="meta">Systems</span>
+            <span class="title">Architecture</span>
+          </h3>
+          <div class="layer-body">
+            <p>Designing software to scale with the product and the team: where the boundaries go, how data moves, how it behaves under load, and the trade-offs written down.</p>
+            <ul class="stack" aria-label="Tools">
+              <li>System design</li><li>Scalability</li><li>Testing</li>
+            </ul>
+          </div>
+        </li>
+        
+      </ol>
+      <figcaption>
+        <span class="fig">Fig. 2</span> Where I work: all the way down<sup class="ref" aria-hidden="true"></sup>.
+      </figcaption>
+    </figure>
+    <aside class="note">
+      My writing in § 03 is mostly JavaScript; that’s what I taught. The work itself goes further down.
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="work" aria-labelledby="work-title">
+  <header class="section-head row">
+    <p class="label">§ 02</p>
+    <h2 id="work-title">Selected work</h2>
+  </header>
+
+  
+  <article class="item row">
+    <div class="item-index">
+      <span class="num">01</span>
+      <span class="meta">Research · 2023</span>
+    </div>
+    <div class="item-body">
+      <h3>QCross</h3>
+      <p class="summary">Cross-platform testing for quantum computing frameworks.<sup class="ref" aria-hidden="true"></sup></p>
+      <p>A testing platform that applies differential and metamorphic testing to three quantum SDKs: IBM Qiskit, Rigetti PyQuil and Google Cirq. Run the same program everywhere, transform it in ways that should not change the answer, and look closely when the answers differ.</p>
+      <ul class="stack" aria-label="Built with">
+        <li>Python</li><li>Qiskit</li><li>Cirq</li><li>PyQuil</li>
+      </ul>
+      <p class="links">
+        <a href="https://github.com/ArfatSalman/qcross">Code <span aria-hidden="true">↗</span></a>
+      </p>
+    </div>
+    <aside class="note">Builds on MorphQ, a metamorphic testing approach for Qiskit (<a href="https://arxiv.org/abs/2206.01111">arXiv:2206.01111</a>).</aside>
+  </article>
+  
+  <article class="item row">
+    <div class="item-index">
+      <span class="num">02</span>
+      <span class="meta">Language · 2020</span>
+    </div>
+    <div class="item-body">
+      <h3>lox.js</h3>
+      <p class="summary">An interpreter for the Lox programming language, in JavaScript.<sup class="ref" aria-hidden="true"></sup></p>
+      <p>A from-scratch implementation of Lox, the small scripting language from Robert Nystrom’s <em>Crafting Interpreters</em>. Scanning, parsing and evaluating, written to understand how a language actually runs.</p>
+      <ul class="stack" aria-label="Built with">
+        <li>JavaScript</li><li>Node.js</li>
+      </ul>
+      <p class="links">
+        <a href="https://github.com/ArfatSalman/lox.js">Code <span aria-hidden="true">↗</span></a>
+      </p>
+    </div>
+    <aside class="note"><em>Crafting Interpreters</em> is also known for its margin notes. This site borrows the idea.</aside>
+  </article>
+  
+  <article class="item row">
+    <div class="item-index">
+      <span class="num">03</span>
+      <span class="meta">Tool · 2020</span>
+    </div>
+    <div class="item-body">
+      <h3>JSONPath Highlighter</h3>
+      <p class="summary">See what a JSONPath expression selects.</p>
+      <p>A small web app that highlights the parts of a JSON document matched by a JSONPath expression, so you can check a query by looking instead of by reasoning.</p>
+      <ul class="stack" aria-label="Built with">
+        <li>React</li><li>JSONPath</li>
+      </ul>
+      <p class="links">
+        <a href="https://jsonpath-highlighter.netlify.app/">Live <span aria-hidden="true">↗</span></a><a href="https://github.com/ArfatSalman/jsonpath-highlighter">Code <span aria-hidden="true">↗</span></a>
+      </p>
+    </div>
+    
+  </article>
+  
+</section>
+
+<section class="section" id="syllabus" aria-labelledby="syllabus-title">
+  <header class="section-head row">
+    <p class="label">§ 03</p>
+    <h2 id="syllabus-title">A short syllabus</h2>
+  </header>
+
+  <div class="row intro">
+    <div></div>
+    <div>
+      <p>
+        I’ve worked as an instructor as well as a developer, and I still think the best way to learn a thing
+        is to explain it to someone. Here is my writing arranged as a short course on JavaScript.
+        Every reading is something I wrote<sup class="ref" aria-hidden="true"></sup>.
+      </p>
+    </div>
+    <aside class="note">
+      10 articles, published in <em>Bits and Pieces</em> and <em>codeburst</em> for
+      2.5K followers on <a href="https://medium.com/@arfatsalman">Medium</a>.
+    </aside>
+  </div>
+
+  <ol class="units">
+    
+    <li class="unit row">
+      <p class="item-index">
+        <span class="meta">Unit</span>
+        <span class="num">01</span>
+      </p>
+      <div class="item-body">
+        <h3>How JavaScript waits</h3>
+        <p>Callbacks, then promises, then async/await: what an async function returns, where it pauses, and the mistakes that make code accidentally sequential.</p>
+        <ul class="readings" aria-label="Readings">
+          
+          <li>
+            <a href="https://medium.com/bitsrc/understanding-javascript-async-and-await-with-examples-a010b03926ea">Deeply Understanding JavaScript Async and Await with Examples</a>
+            <span class="meta">Bits and Pieces · May 2019 · 10 min</span>
+          </li>
+          
+        </ul>
+      </div>
+    </li>
+    
+    <li class="unit row">
+      <p class="item-index">
+        <span class="meta">Unit</span>
+        <span class="num">02</span>
+      </p>
+      <div class="item-body">
+        <h3>Objects, all the way down</h3>
+        <p>Creating, reading and checking properties; a primer on prototypes; then the hidden attributes (writable, enumerable, configurable) every property carries.</p>
+        <ul class="readings" aria-label="Readings">
+          
+          <li>
+            <a href="https://medium.com/bitsrc/the-chronicles-of-javascript-objects-2d6b9205cd66">The Chronicles of JavaScript Objects</a>
+            <span class="meta">Bits and Pieces · Jan 2019 · 16 min</span>
+          </li>
+          
+          <li>
+            <a href="https://medium.com/bitsrc/diving-deeper-in-javascripts-objects-318b1e13dc12">Diving Deeper in JavaScript’s Objects</a>
+            <span class="meta">Bits and Pieces · Jan 2019 · 9 min</span>
+          </li>
+          
+        </ul>
+      </div>
+    </li>
+    
+    <li class="unit row">
+      <p class="item-index">
+        <span class="meta">Unit</span>
+        <span class="num">03</span>
+      </p>
+      <div class="item-body">
+        <h3>Functions with opinions</h3>
+        <p>Arrow functions and lexical <code>this</code>. Generators that pause midway, power iterables and stream infinite data lazily.</p>
+        <ul class="readings" aria-label="Readings">
+          
+          <li>
+            <a href="https://medium.com/bitsrc/a-practical-guide-to-es6-arrow-functions-c16975100cf5">A Practical Guide to ES6 Arrow Functions</a>
+            <span class="meta">Bits and Pieces · Dec 2018 · 10 min</span>
+          </li>
+          
+          <li>
+            <a href="https://codeburst.io/understanding-generators-in-es6-javascript-with-examples-6728834016d5">Understanding Generators in ES6 JavaScript with Examples</a>
+            <span class="meta">codeburst · Apr 2018 · 10 min</span>
+          </li>
+          
+        </ul>
+      </div>
+    </li>
+    
+    <li class="unit row">
+      <p class="item-index">
+        <span class="meta">Unit</span>
+        <span class="num">04</span>
+      </p>
+      <div class="item-body">
+        <h3>Metaprogramming</h3>
+        <p>Proxies and Reflect, learned by rebuilding a real library, on-change, from scratch.</p>
+        <ul class="readings" aria-label="Readings">
+          
+          <li>
+            <a href="https://codeburst.io/understanding-javascript-proxies-by-examining-on-change-library-f252eddf76c2">Understanding JavaScript Proxies by Examining on-change Library</a>
+            <span class="meta">codeburst · Mar 2018 · 9 min</span>
+          </li>
+          
+        </ul>
+      </div>
+    </li>
+    
+    <li class="unit row">
+      <p class="item-index">
+        <span class="meta">Unit</span>
+        <span class="num">05</span>
+      </p>
+      <div class="item-body">
+        <h3>React, minus the foot-guns</h3>
+        <p>Binding in render, array indexes as keys, asynchronous <code>setState</code>: what goes wrong, and why.</p>
+        <ul class="readings" aria-label="Readings">
+          
+          <li>
+            <a href="https://codeburst.io/how-to-not-react-common-anti-patterns-and-gotchas-in-react-40141fe0dcd">How to NOT React: Common Anti-Patterns and Gotchas in React</a>
+            <span class="meta">codeburst · Mar 2018 · 9 min</span>
+          </li>
+          
+        </ul>
+      </div>
+    </li>
+    
+    <li class="unit row">
+      <p class="item-index">
+        <span class="meta">Unit</span>
+        <span class="num">06</span>
+      </p>
+      <div class="item-body">
+        <h3>Write an interpreter</h3>
+        <p>Scanning, parsing and evaluating a whole language by hand. The best way I know to understand everything above.</p>
+        <ul class="readings" aria-label="Readings">
+          
+          <li>
+            <a href="https://github.com/ArfatSalman/lox.js">lox.js</a>
+            <span class="meta">Code on GitHub</span>
+          </li>
+          
+        </ul>
+      </div>
+    </li>
+    
+  </ol>
+
+  <div class="row more">
+    <p class="label">Also</p>
+    <div>
+      <h3>Shorter pieces on Medium</h3>
+      <ul class="readings">
+        
+        <li>
+          <a href="https://codeburst.io/top-javascript-vscode-extensions-for-faster-development-c687c39596f5">Top JavaScript VSCode Extensions for Faster Development</a>
+          <span class="meta">codeburst · Mar 2018 · 6 min</span>
+        </li>
+        
+        <li>
+          <a href="https://codeburst.io/top-react-and-redux-packages-for-faster-development-5fa0ace42fe7">Top React and Redux Packages for Faster Development</a>
+          <span class="meta">codeburst · Feb 2018 · 5 min</span>
+        </li>
+        
+        <li>
+          <a href="https://codeburst.io/why-should-you-care-about-progressive-web-apps-pwas-3c3f73cb8c92">Why should you care about Progressive Web Apps (PWAs)?</a>
+          <span class="meta">codeburst · Feb 2018 · 5 min</span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about" aria-labelledby="about-title">
+  <header class="section-head row">
+    <p class="label">§ 04</p>
+    <h2 id="about-title">About</h2>
+  </header>
+
+  <div class="row">
+    <div></div>
+    <div class="prose">
+      <p>
+        I’m Arfat. I live in Oslo, which I came to for a Master’s in Computer Science at the University of
+        Oslo. Before that I worked as a full-stack developer and an instructor: building products across the
+        front end and the back end, and teaching other people to do the same.
+      </p>
+      <p>
+        At work I gravitate towards architecture: where the boundaries go, how data moves through a system,
+        and what will still hold up when the traffic, the codebase and the team are ten times bigger.
+      </p>
+      <p>
+        Outside of it, I like programming languages and the tools around them: interpreters, paradigms, and the testing that
+        keeps them honest. That curiosity has taken me from Lox to OCaml and Standard ML, and as far as
+        testing the SDKs people use to write quantum programs.
+      </p>
+    </div>
+    <aside class="note facts" aria-label="Quick facts">
+      <dl>
+        <dt>Based in</dt>
+        <dd>Oslo, Norway</dd>
+        <dt>Front end</dt>
+        <dd>JavaScript, React</dd>
+        <dt>Back end</dt>
+        <dd>Node.js, Python</dd>
+        <dt>Drawn to</dt>
+        <dd>Architecture, languages</dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <header class="section-head row">
+    <p class="label">§ 05</p>
+    <h2 id="contact-title">Contact</h2>
+  </header>
+
+  <div class="row">
+    <div></div>
+    <div>
+      <p class="big">The quickest way to reach me is email.</p>
+      <p class="email" data-email="707e79726e3967766576737e647257707a767e7b3974787a">
+        <button class="reveal" type="button" hidden>Show my email address</button>
+        <a class="email-address" hidden></a>
+        <button class="copy" type="button" hidden>Copy</button>
+        <span class="copy-status" role="status"></span>
+      </p>
+      <noscript>
+        <p class="email-fallback">
+          My email address needs JavaScript to appear. You can also reach me on
+          <a href="https://www.linkedin.com/in/arfatsalman/">LinkedIn</a>.
+        </p>
+      </noscript>
+      <ul class="elsewhere" aria-label="Elsewhere">
+        
+        <li><a href="https://github.com/ArfatSalman"><span class="site">GitHub</span> <span class="handle">ArfatSalman</span></a></li>
+        
+        <li><a href="https://medium.com/@arfatsalman"><span class="site">Medium</span> <span class="handle">@arfatsalman</span></a></li>
+        
+        <li><a href="https://www.linkedin.com/in/arfatsalman/"><span class="site">LinkedIn</span> <span class="handle">in/arfatsalman</span></a></li>
+        
+        <li><a href="https://twitter.com/salman_arfat"><span class="site">Twitter</span> <span class="handle">@salman_arfat</span></a></li>
+        
+      </ul>
+    </div>
+  </div>
+</section>
+
+      </main>
+
+      <footer class="colophon row">
+        <p class="label">Colophon</p>
+        <p>
+          © 2026 Arfat Salman. Set in Newsreader and Fira Code, built with
+          <a href="https://www.11ty.dev/">Eleventy</a>. The margin notes are a habit borrowed from good
+          textbooks.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
