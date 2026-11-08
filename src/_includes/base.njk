@@ -1,40 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com"/>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description or site.description }}" />
+    <meta name="author" content="{{ site.name }}" />
+    {% if noindex %}
+    <meta name="robots" content="noindex" />
+    {% else %}
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+    {% endif %}
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="{{ site.name }}" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ description or site.description }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:image" content="{{ site.url }}/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="{{ site.name }}, {{ site.role | lower }} in Oslo" />
+    <meta property="profile:first_name" content="Arfat" />
+    <meta property="profile:last_name" content="Salman" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@salman_arfat" />
+
+    {% if page.url == "/" %}
+    <script type="application/ld+json">{{ personSchema | dump | safe }}</script>
+    {% endif %}
+
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/favicon_io/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicon_io/site.webmanifest" />
+
+    <script>
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+      } catch (e) {}
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="/style.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet"/>
-    <title>{{title}}</title>
-    {% block style %}
-    {% endblock %}
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/main.js" defer></script>
   </head>
   <body>
-    <img class="under-construction-img" src="assets/under-construction.png" alt="Under construction icon" />
-    <header>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/projects">Projects</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      {% block content %}
+    <a class="skip" href="#main">Skip to content</a>
+
+    <div class="page">
+      <header class="masthead">
+        <a class="brand" href="/" aria-label="{{ site.name }}, home">arfat<span>.</span>dev</a>
+        <nav class="nav" aria-label="Sections">
+          <a href="/#stack">Stack</a>
+          <a href="/#work">Work</a>
+          <a href="/#syllabus">Syllabus</a>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+            <path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor" />
+          </svg>
+        </button>
+      </header>
+
+      <main id="main">
         {{ content | safe }}
-      {% endblock %}
-    </main>
-    <footer>Made with
-      <a href="https://www.11ty.dev/">11ty</a>
-    </footer>
+      </main>
+
+      <footer class="colophon row">
+        <p class="label">Colophon</p>
+        <p>
+          © {{ year }} {{ site.name }}. Set in Newsreader and Fira Code, built with
+          <a href="https://www.11ty.dev/">Eleventy</a>. The margin notes are a habit borrowed from good
+          textbooks.
+        </p>
+      </footer>
+    </div>
   </body>
 </html>

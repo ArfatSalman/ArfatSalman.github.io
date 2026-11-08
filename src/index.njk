@@ -1,38 +1,228 @@
 ---
-title: Personal Homepage of Arfat Salman
+layout: base.njk
+title: Arfat Salman · Full-stack software engineer in Oslo
 ---
-{% extends "base.njk" %}
 
-{% block content %}
+<section class="hero row" aria-labelledby="name">
+  <figure class="portrait">
+    <img src="/assets/profile.jpeg" width="450" height="450" fetchpriority="high" alt="Portrait of Arfat Salman in glasses and a checked shirt." />
+    <figcaption><span class="fig">Fig. 1</span> The author, probably about to explain closures.</figcaption>
+  </figure>
 
-<img width="200" class="profile-picture" src="assets/profile.jpeg" />
-<div class="name">Arfat Salman</div>
-
-<article class="intro">
-  A passionate full stack web developer and an instructor.
-</article>
-
-<article class="intro">
-  I have 4 years of experience in building user interfaces using React and
-  JavaScript.
-</article>
-
-<div class="links">
-  <div>
-    <img src="/assets/github.png" alt="Icon of GitHub, Inc." />
-    <a href="https://github.com/ArfatSalman/">GitHub</a>
+  <div class="hero-body">
+    <p class="kicker">{{ site.role }} · {{ site.location }}</p>
+    <h1 id="name">Arfat <em>Salman</em></h1>
+    <p class="lede">
+      I design and build software end to end, from the interface down to the systems
+      <span class="pen">underneath<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 6.5 C 18 3, 34 8.5, 52 5.5 S 84 3.5, 99 6" /></svg></span>,
+      and I like explaining how it all works.
+    </p>
+    <p>
+      Full-stack engineer and instructor<sup class="ref" aria-hidden="true"></sup>. Equally at home in a React
+      component, an API or an architecture diagram, and most interested in software that keeps working as it
+      grows. These days I’m in Oslo.
+    </p>
+    <p class="jump">
+      <a href="#stack">Across the stack</a>
+      <a href="#work">Selected work</a>
+      <a href="#contact">Get in touch</a>
+    </p>
   </div>
-  <div>
-    <img src="/assets/medium.png" alt="Icon of Medium" />
-    <a href="https://medium.com/@arfatsalman">Medium</a>
+
+  <aside class="note">
+    Hence the syllabus in § 03: everything I’ve written, arranged the way I’d teach it.
+  </aside>
+</section>
+
+<section class="section" id="stack" aria-labelledby="stack-title">
+  <header class="section-head row">
+    <p class="label">§ 01</p>
+    <h2 id="stack-title">Across the stack</h2>
+  </header>
+
+  <div class="row">
+    <div></div>
+    <figure class="layers-fig">
+      <ol class="layers">
+        {% for layer in practice %}
+        <li class="layer">
+          <h3 class="layer-name">
+            <span class="meta">{{ layer.area }}</span>
+            <span class="title">{{ layer.title }}</span>
+          </h3>
+          <div class="layer-body">
+            <p>{{ layer.body }}</p>
+            <ul class="stack" aria-label="Tools">
+              {% for tag in layer.tags %}<li>{{ tag }}</li>{% endfor %}
+            </ul>
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+      <figcaption>
+        <span class="fig">Fig. 2</span> Where I work: all the way down<sup class="ref" aria-hidden="true"></sup>.
+      </figcaption>
+    </figure>
+    <aside class="note">
+      My writing in § 03 is mostly JavaScript; that’s what I taught. The work itself goes further down.
+    </aside>
   </div>
-  <div>
-    <img src="/assets/twitter.png" alt="Icon of Twitter" />
-    <a href="https://twitter.com/salman_arfat">Twitter</a>
+</section>
+
+<section class="section" id="work" aria-labelledby="work-title">
+  <header class="section-head row">
+    <p class="label">§ 02</p>
+    <h2 id="work-title">Selected work</h2>
+  </header>
+
+  {% for project in projects %}
+  <article class="item row">
+    <div class="item-index">
+      <span class="num">{{ loop.index | pad }}</span>
+      <span class="meta">{{ project.kind }} · {{ project.year }}</span>
+    </div>
+    <div class="item-body">
+      <h3>{{ project.title }}</h3>
+      <p class="summary">{{ project.summary }}{% if project.note %}<sup class="ref" aria-hidden="true"></sup>{% endif %}</p>
+      <p>{{ project.body | safe }}</p>
+      <ul class="stack" aria-label="Built with">
+        {% for tech in project.stack %}<li>{{ tech }}</li>{% endfor %}
+      </ul>
+      <p class="links">
+        {% for link in project.links %}<a href="{{ link.url }}">{{ link.label }} <span aria-hidden="true">↗</span></a>{% endfor %}
+      </p>
+    </div>
+    {% if project.note %}<aside class="note">{{ project.note | safe }}</aside>{% endif %}
+  </article>
+  {% endfor %}
+</section>
+
+<section class="section" id="syllabus" aria-labelledby="syllabus-title">
+  <header class="section-head row">
+    <p class="label">§ 03</p>
+    <h2 id="syllabus-title">A short syllabus</h2>
+  </header>
+
+  <div class="row intro">
+    <div></div>
+    <div>
+      <p>
+        I’ve worked as an instructor as well as a developer, and I still think the best way to learn a thing
+        is to explain it to someone. Here is my writing arranged as a short course on JavaScript.
+        Every reading is something I wrote<sup class="ref" aria-hidden="true"></sup>.
+      </p>
+    </div>
+    <aside class="note">
+      {{ syllabus.articleCount }} articles, published in <em>Bits and Pieces</em> and <em>codeburst</em> for
+      2.5K followers on <a href="https://medium.com/@arfatsalman">Medium</a>.
+    </aside>
   </div>
-  <div>
-    <img src="/assets/linkedin.png" alt="Icon of LinkedIn" />
-    <a href="https://www.linkedin.com/in/arfatsalman/">LinkedIn</a>
+
+  <ol class="units">
+    {% for unit in syllabus.units %}
+    <li class="unit row">
+      <p class="item-index">
+        <span class="meta">Unit</span>
+        <span class="num">{{ loop.index | pad }}</span>
+      </p>
+      <div class="item-body">
+        <h3>{{ unit.title }}</h3>
+        <p>{{ unit.topics | safe }}</p>
+        <ul class="readings" aria-label="Readings">
+          {% for r in unit.readings %}
+          <li>
+            <a href="{{ r.url }}">{{ r.title }}</a>
+            <span class="meta">{{ r.where }}{% if r.date %} · {{ r.date | monthYear }}{% endif %}{% if r.minutes %} · {{ r.minutes }} min{% endif %}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+
+  <div class="row more">
+    <p class="label">Also</p>
+    <div>
+      <h3>Shorter pieces on Medium</h3>
+      <ul class="readings">
+        {% for r in syllabus.more %}
+        <li>
+          <a href="{{ r.url }}">{{ r.title }}</a>
+          <span class="meta">{{ r.where }} · {{ r.date | monthYear }} · {{ r.minutes }} min</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
-</div>
-{% endblock %}
+</section>
+
+<section class="section" id="about" aria-labelledby="about-title">
+  <header class="section-head row">
+    <p class="label">§ 04</p>
+    <h2 id="about-title">About</h2>
+  </header>
+
+  <div class="row">
+    <div></div>
+    <div class="prose">
+      <p>
+        I’m Arfat. I live in Oslo, which I came to for a Master’s in Computer Science at the University of
+        Oslo. Before that I worked as a full-stack developer and an instructor: building products across the
+        front end and the back end, and teaching other people to do the same.
+      </p>
+      <p>
+        At work I gravitate towards architecture: where the boundaries go, how data moves through a system,
+        and what will still hold up when the traffic, the codebase and the team are ten times bigger.
+      </p>
+      <p>
+        Outside of it, I like programming languages and the tools around them: interpreters, paradigms, and the testing that
+        keeps them honest. That curiosity has taken me from Lox to OCaml and Standard ML, and as far as
+        testing the SDKs people use to write quantum programs.
+      </p>
+    </div>
+    <aside class="note facts" aria-label="Quick facts">
+      <dl>
+        <dt>Based in</dt>
+        <dd>{{ site.location }}</dd>
+        <dt>Front end</dt>
+        <dd>JavaScript, React</dd>
+        <dt>Back end</dt>
+        <dd>Node.js, Python</dd>
+        <dt>Drawn to</dt>
+        <dd>Architecture, languages</dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <header class="section-head row">
+    <p class="label">§ 05</p>
+    <h2 id="contact-title">Contact</h2>
+  </header>
+
+  <div class="row">
+    <div></div>
+    <div>
+      <p class="big">The quickest way to reach me is email.</p>
+      <p class="email" data-email="{{ site.emailEncoded }}">
+        <button class="reveal" type="button" hidden>Show my email address</button>
+        <a class="email-address" hidden></a>
+        <button class="copy" type="button" hidden>Copy</button>
+        <span class="copy-status" role="status"></span>
+      </p>
+      <noscript>
+        <p class="email-fallback">
+          My email address needs JavaScript to appear. You can also reach me on
+          <a href="https://www.linkedin.com/in/arfatsalman/">LinkedIn</a>.
+        </p>
+      </noscript>
+      <ul class="elsewhere" aria-label="Elsewhere">
+        {% for link in site.links %}
+        <li><a href="{{ link.url }}"><span class="site">{{ link.label }}</span> <span class="handle">{{ link.handle }}</span></a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
